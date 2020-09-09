@@ -1,0 +1,21 @@
+{
+  "name": "electron-auto-update",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "repository": {
+    "type" : "git",
+    "url" : "git remote add origin https://github.com/mohasarc/electron-updater.git"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^10.1.1",
+    "electron-builder": "^22.8.0"
+  }
+}
