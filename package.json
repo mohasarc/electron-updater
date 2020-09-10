@@ -1,21 +1,47 @@
 {
   "name": "electron-auto-update",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "main.js",
   "repository": {
-    "type" : "git",
-    "url" : "git remote add origin https://github.com/mohasarc/electron-updater.git"
+    "type": "git",
+    "url": "https://github.com/mohasarc/electron-updater.git"
   },
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder build --win --publish never",
+    "build": "electron-builder",
     "deploy": "electron-builder build --win --publish always"
+  },
+  "build": {
+    "appId": "com.test.app",
+    "productName": "test",
+    "copyright": "Copyright © 2020 test",
+    "asar": false,
+    "win": {
+      "publish": {
+        "provider": "github"
+      }
+    },
+    "target": {
+      "target" : "nsis-web",
+      "arch": [
+        "x64",
+        "ia32"
+      ]
+    },
+    "nsisWeb": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "differentialPackage" : true
+    }
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "electron": "^10.1.1",
     "electron-builder": "^22.8.0"
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.4"
   }
 }
